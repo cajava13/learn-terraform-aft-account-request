@@ -25,3 +25,28 @@ module "sandbox" {
 
   account_customizations_name = "sandbox"
 }
+
+
+module "aaaa" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "escala.iact.us+security1@escala24x7.com"
+    AccountName               = "aaaa"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "escala.iact.us+security1@escala24x7.com"
+    SSOUserFirstName          = "TestingBed"
+    SSOUserLastName           = "TestingBed"
+  }
+
+  account_tags = {
+    "Learn Tutorial" = "AFT"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "aaaa"
+    change_reason       = "testing"
+  }
+
+  account_customizations_name = "security-aaaa"
+}
