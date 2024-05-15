@@ -100,3 +100,28 @@ module "Tooling" {
 
   account_customizations_name = "Security-Tooling"
 }
+
+
+module "Tooling2" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "escala.iact.us+sec2@escala24x7.com"
+    AccountName               = "Tooling2"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "escala.iact.us+sec2@escala24x7.com"
+    SSOUserFirstName          = "Security"
+    SSOUserLastName           = "Tooling"
+  }
+
+  account_tags = {
+    "OU" = "Sandbox"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Tooling2"
+    change_reason       = "custom"
+  }
+
+  account_customizations_name = "Security-Tooling2"
+}
