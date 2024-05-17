@@ -199,3 +199,28 @@ module "Seca" {
 
   account_customizations_name = "Security-Seca"
 }
+
+
+module "Seguridad" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "escala.iact.us+seca@escala24x7.com"
+    AccountName               = "Seguridad"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "escala.iact.us+seca@escala24x7.com"
+    SSOUserFirstName          = "testing"
+    SSOUserLastName           = "testing"
+  }
+
+  account_tags = {
+    "OU" = "Sandbox"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Seguridad"
+    change_reason       = "testing"
+  }
+
+  account_customizations_name = "Security-Seguridad"
+}
