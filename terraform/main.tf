@@ -100,3 +100,28 @@ module "seguridadD" {
 
   account_customizations_name = "Security-seguridadD"
 }
+
+
+module "SeguridadE" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "escala.iact.us+sece@escala24x7.com"
+    AccountName               = "SeguridadE"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "escala.iact.us+sece@escala24x7.com"
+    SSOUserFirstName          = "testing"
+    SSOUserLastName           = "testing"
+  }
+
+  account_tags = {
+    "OU" = "Sandbox"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "SeguridadE"
+    change_reason       = "nuevacuenta"
+  }
+
+  account_customizations_name = "Security-SeguridadE"
+}
