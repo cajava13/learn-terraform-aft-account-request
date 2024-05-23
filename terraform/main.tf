@@ -25,3 +25,28 @@ module "sandbox" {
 
   account_customizations_name = "sandbox"
 }
+
+
+module "nueva nueva" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "escala.iact.us+secl@escala24x7.com"
+    AccountName               = "nueva nueva"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "escala.iact.us+secl@escala24x7.com"
+    SSOUserFirstName          = "nueva"
+    SSOUserLastName           = "nueva"
+  }
+
+  account_tags = {
+    "OU" = "Sandbox"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "nueva nueva"
+    change_reason       = "Account creation"
+  }
+
+  account_customizations_name = "Security-nueva nueva"
+}
