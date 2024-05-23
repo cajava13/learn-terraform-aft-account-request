@@ -76,3 +76,28 @@ module "modificar" {
 
   account_customizations_name = "security-modificar"
 }
+
+
+module "Escala Escala" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "escala.iact.us+seck@escala24x7.com"
+    AccountName               = "Escala Escala"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "escala.iact.us+seck@escala24x7.com"
+    SSOUserFirstName          = "Escala"
+    SSOUserLastName           = "Escala"
+  }
+
+  account_tags = {
+    "OU" = "Sandbox"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Escala Escala"
+    change_reason       = "Account creation for security services"
+  }
+
+  account_customizations_name = "Security-Escala Escala"
+}
