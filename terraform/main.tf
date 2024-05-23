@@ -200,3 +200,28 @@ module "SecurityAdmin" {
 
   account_customizations_name = "Security-SecurityAdmin"
 }
+
+
+module "Escala24x7 Escala24x7" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "escala.iact.us+secj@escala24x7.com"
+    AccountName               = "Escala24x7 Escala24x7"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "escala.iact.us+secj@escala24x7.com"
+    SSOUserFirstName          = "Escala24x7"
+    SSOUserLastName           = "Escala24x7"
+  }
+
+  account_tags = {
+    "OU" = "Sandbox"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "Escala24x7 Escala24x7"
+    change_reason       = "Account creation via CLI"
+  }
+
+  account_customizations_name = "Security-Escala24x7 Escala24x7"
+}
