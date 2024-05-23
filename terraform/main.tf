@@ -101,3 +101,28 @@ module "Escala Escala" {
 
   account_customizations_name = "Security-Escala Escala"
 }
+
+
+module "escala-security" {
+  source = "./modules/aft-account-request"
+
+  control_tower_parameters = {
+    AccountEmail              = "escala.iact.us+seck@escala24x7.com"
+    AccountName               = "escala-security"
+    ManagedOrganizationalUnit = "Sandbox"
+    SSOUserEmail              = "escala.iact.us+seck@escala24x7.com"
+    SSOUserFirstName          = "admin"
+    SSOUserLastName           = "escala"
+  }
+
+  account_tags = {
+    "OU" = "Sandbox"
+  }
+
+  change_management_parameters = {
+    change_requested_by = "escala-security"
+    change_reason       = "Account creation for security services"
+  }
+
+  account_customizations_name = "Security-escala-security"
+}
